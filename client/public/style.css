@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(32, 38, 49);
+  color: rgb(20, 255, 255);
+  font-family: "Exo";
+}
+
+h1 {
+  text-align: center;
+  font-family: fonte;
+}
+
+.title,
+.container {
+  margin: auto;
+  width: fit-content;
+}
+
+.title {
+  margin-top: 5vh;
+  margin-bottom: 2vh;
+  font-size: 6rem;
+  color: yellow;
+  text-shadow: 0 0 18px yellow;
+  font-family: "Audiowide";
+
+  animation-name: title;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+.title .flick {
+  animation-name: flick;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes title {
+  to {
+    margin-top: 15vh;
+    margin-bottom: 5vh;
+    font-size: 11rem;
+  }
+}
+
+@keyframes flick {
+  0%, 19.99%, 22%, 62.99%, 64%, 64.99%, 70%, 100% {
+    color: yellow;
+    text-shadow: 0 0 18px yellow;
+    opacity: .9;
+  }
+  20%, 21.99%, 63%, 63.99%, 65%, 69.99% {
+    opacity: .3;
+    text-shadow: 0 0 18px rgba(255, 255, 0, .3);
+  }
+}
+
+.container *,
+.container *::after,
+.container *::before {
+  font-weight: bolder;
+  box-sizing: border-box;
+}
+
+.footer {
+  margin: 3em 0 0 5em;
+  font-size: 16px;
+}
+
+.button1 {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 64px;
+  padding: 13px 64px;
+  border-radius: 14px;
+  color: rgb(20, 255, 255);
+  border: 8px solid rgb(20, 255, 255);
+  text-shadow: 0 0 8px rgba(200, 255, 40, 0.5), 0 0 29px rgb(20, 255, 255);
+  box-shadow: inset 0 0 32px rgb(20, 255, 255), 0 0 32px rgb(20, 255, 255);
+  position: relative;
+
+  animation-name: btn1;
+  animation-iteration-count: 1;
+  animation-duration: 5s;
+}
+
+.button1::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(20, 255, 255);
+  left: 0;
+  top: 120%;
+  transform: perspective(64px) rotateX(40deg) scale(1, 0.35);
+  filter: blur(64px);
+  opacity: 0;
+
+  animation-name: btn1bef;
+  animation-iteration-count: 1;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+.button1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(20, 255, 255);
+  box-shadow: 0 0 128px 32px rgb(20, 255, 255);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 100ms linear;
+}
+
+.button1:hover::after,
+.button1:focus::after {
+  opacity: 1;
+}
+
+.button1:hover::before,
+.button1:focus::before {
+  opacity: 1;
+}
+
+.button1:hover,
+.button1:focus {
+  color: black;
+  text-shadow: none;
+}
+
+
+.button2 {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 64px;
+  padding: 14px 64px;
+  border-radius: 14px;
+  color: rgb(255, 40, 40);
+  border: 8px solid rgb(255, 40, 40);
+  text-shadow: 0 0 8px rgba(255, 200, 200, 0.5), 0 0 29px rgb(255, 40, 40);
+  box-shadow: inset 0 0 32px rgb(255, 40, 40), 0 0 32px rgb(255, 40, 40);
+  position: relative;
+
+  animation-name: btn2;
+  animation-iteration-count: 1;
+  animation-duration: 5s;
+}
+
+.button2::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 40, 40);
+  left: 0;
+  top: 120%;
+  transform: perspective(64px) rotateX(40deg) scale(1, 0.35);
+  filter: blur(64px);
+  opacity: 0;
+
+  animation-name: btn2bef;
+  animation-iteration-count: 1;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+.button2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(255, 40, 40);
+  box-shadow: 0 0 128px 32px rgb(255, 40, 40);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 100ms linear;
+}
+
+.button2:hover::after,
+.button2:focus::after {
+  opacity: 1;
+}
+
+.button2:hover::before,
+.button2:focus::before {
+  opacity: 1;
+}
+
+.button2:hover,
+.button2:focus {
+  color: white;
+  text-shadow: none;
+}
+
+@keyframes btn1 {
+  from {
+    color: rgba(20, 255, 255, .1);
+    border: 8px solid rgba(20, 255, 255, .1);
+    text-shadow: 0 0 8px rgba(200, 255, 255, .1), 0 0 29px rgba(20, 255, 255, .1);
+    box-shadow: inset 0 0 32px rgba(20, 255, 241, .1), 0 0 32px rgba(20, 255, 255, .1);
+  }
+  to {
+    color: rgb(20, 255, 255);
+    border: 8px solid rgb(20, 255, 255);
+    text-shadow: 0 0 8px rgba(200, 255, 255, 0.5), 0 0 29px rgb(20, 255, 255);
+    box-shadow: inset 0 0 32px rgb(20, 255, 255), 0 0 32px rgb(20, 255, 255);
+  }
+}
+@keyframes btn1bef {
+  to {
+    opacity: .7;
+  }
+}
+@keyframes btn2 {
+  from {
+    color: rgba(255, 40, 40, .1);
+    border: 8px solid rgba(255, 40, 40, .1);
+    text-shadow: 0 0 8px rgba(255, 255, 255, .1), 0 0 29px rgba(255, 40, 40, .1);
+    box-shadow: inset 0 0 32px rgba(255, 40, 40, .1), 0 0 32px rgba(255, 40, 40, .1);
+  }
+  to {
+    color: rgb(255, 40, 40);
+    border: 8px solid rgb(255, 40, 40);
+    text-shadow: 0 0 8px rgba(255, 200, 200, 0.5), 0 0 29px rgb(255, 40, 40);
+    box-shadow: inset 0 0 32px rgb(255, 40, 40), 0 0 32px rgb(255, 40, 40);
+  }
+}
+@keyframes btn2bef {
+  to {
+    opacity: .7;
+  }
+}

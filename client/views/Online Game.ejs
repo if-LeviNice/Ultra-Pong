@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ultra Pong</title>
+  <meta charset="UTF-8">
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="/online/client.js"defer></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    canvas {
+      position: absolute;
+      margin: auto;
+      display: block;
+      top: 50vh;
+      bottom: 50vh;
+    }
+    @keyframes neutral {
+      to {
+        transform-origin: 0deg;
+      }
+    }
+    @keyframes bluetilt {
+      from {
+        transform-origin: 0deg;
+      }
+      to {
+        transform: rotate(.5deg);
+      }
+    }
+    @keyframes redtilt {
+      from {
+        transform-origin: 0deg;
+      }
+      to {
+        transform: rotate(-.5deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="Ultra Pong" width="1540" height="735">Error.</canvas>
+  <audio loop autoplay>
+    <source src="/Megalovania.ogg" type="audio/ogg">
+    Your browser doesn't support audio tag.
+  </audio>
+</body>
+</html>
